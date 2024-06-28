@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    	.InputTitle{
+    		float: left;padding-right: 10px;	
+
+    	}
+    	.ClearButton{
+    		
+    		
+    	}
+    	.MainDiv
+    	{
+    		background-color: coral
+    		height : 100%;
+    		width: 50vh;
+    	}
+    	.AllNumber
+    	{
+    		padding-left:10px;
+    		height: 100%;
+
+    	}
+    	.btn
+    	{
+    		height: 50%;
+    		width: 20%;
+    	}
+    </style>
+</head>
+<body>
+	<div class="MainDiv">
+			<div class="InputTitle">
+		    	<input type="text" name="" id="result">
+		    </div>
+		    <div class="ClearButton">
+		    	<button class="btn" id="result" onclick="clr()">C</button>
+		    </div>
+		    <br>
+				<div class="AllNumber">
+				    <div class="firstRow">
+				    	<button class="btn" onclick="dis('7')">7</button>
+				    	<button class="btn" onclick="dis('8')">8</button>
+				    	<button class="btn" onclick="dis('9')">9</button>
+				    	<button class="btn" onclick="dis('+')">+</button>
+				    </div>
+				    <br>
+				    <div class="SecondRow">
+				    	<button class="btn" onclick="dis('6')">6</button>
+				    	<button class="btn" onclick="dis('5')">5</button>
+				    	<button class="btn" onclick="dis('4')">4</button>
+				    	<button class="btn" onclick="dis('-')">-</button>
+				    </div>
+				    <br>
+		  			<div class="ThirdRow">
+				    	<button class="btn" onclick="dis('3')">3</button>
+				    	<button class="btn" onclick="dis('2')">2</button>
+				    	<button class="btn" onclick="dis('1')">1</button>
+				    	<button class="btn" onclick="dis('*')">*</button>
+				    </div>
+				    <br>
+				   <div class="ThirdRow">
+				   		<button class="btn" onclick="dis('0')" >0</button>
+				    	<button class="btn" onclick="dis('00')">00</button>
+				    	<button class="btn" onclick="solve(event)">Enter</button>
+				    	<button class="btn" onclick="dis('/')">/</button>
+				    </div>
+
+				</div>
+
+	</div>
+
+
+
+
+	<script type="text/javascript">
+		function dis(n)
+		{
+			document.getElementById('result').value += n;
+		}
+		function clr()
+		{
+			document.getElementById('result').value = "";
+		}
+		// function equal(event)
+		// {
+		// 	if (event.key == '0' || event.key == 1 || event.key == 2|| event.key == 3 || event.key == 4 || event.key == 5 || event.key == 6 || event.key == 7 || event.key ==8 || event.key == 9 || event.key == '+' || event.key == '-' || event.key == '*' || event.key == '/') 
+		// 	{
+		// 		document.getElementById('result').value += event.key
+		// 	}
+		// }
+
+		function solve()
+		{
+			x = document.getElementById('result').value
+			y = eval(x)
+			document.getElementById('result').value = y
+		}
+		
+	</script>
+</body>
+</html>
