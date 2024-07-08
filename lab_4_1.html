@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		let array = 
+		[
+				{
+					'id' :  101 ,
+					'name' : "arjun bala" ,
+					'course' : "java" ,
+				},
+
+				{
+					'id' :  102 ,
+					'name' : "VIJAY SEKHAVAT" ,
+					'course' : 'WD' ,
+				},
+
+				{
+					'id' :  103,
+					'name' : "KARTIKRAJ" ,
+					'course' : "D - MATHS" ,
+				},
+
+				{
+					'id' :  104,
+					'name' : "DAXA JANI " ,
+					'course' : "MATHS" ,
+				},
+
+				{
+					'id' :  105 ,
+					'name' : "JADEJA " ,
+					'course' : "DS",
+				}
+			]
+
+				document.write("<table>");
+					for(obj of array)
+					{
+						document.write("<tr>" + "id" + "</tr>" );
+						document.write("<tr>" + "name" + "</tr>" );
+						document.write("<tr>" + "course" + "</tr>" );
+						document.write("<tr>" "<td>" + obj.id  + "</td>""</tr>");
+						document.write("<td>" + obj.name  +"</td>");
+						document.write("<td>" + obj.course +"</td>");
+
+					}
+				document.write("</table>");
+		
+
+
+	</script>
+	</body>
+</html>

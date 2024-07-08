@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<button onclick='push()'>PUSH</button>
+	<button onclick='pop()'>POP</button>
+	<button onclick='shift()'>SHIFT</button>
+	<button onclick='unshift()'>UNSHIFT</button>
+	<button onclick='splice()'>SPLICE</button>
+	<button onclick='sort()'>SORT</button>
+
+	<script type="text/javascript">
+			let array = []; 
+
+			function push()
+			{
+
+				array.push(parseInt(prompt("Enter element to push : ")));
+				console.log(array);
+			}
+
+				function pop()
+			{
+
+				array.pop();
+				console.log(array);
+			}
+
+
+			function shift()
+			{
+
+				array.shift();
+				console.log(array);
+			}
+
+				function unshift()
+			{
+
+				array.unshift(parseInt(prompt("Enter element to push : ")) );
+				console.log(array);
+			}
+
+				function splice()
+			{
+				var  z = []
+				x=parseInt(prompt("Enter element to X: "));
+				y=parseInt(prompt("Enter element to Y : "));
+				for(var i=0 ; i<y ; i++)
+				{
+					z[i]=parseInt(prompt("Enter element to Z : "));
+				}
+				
+
+
+				
+				array.splice(x,y,z);
+				console.log(array);
+			}
+
+				function sort()
+			{
+
+				array.sort( );
+				console.log(array);
+			}
+
+
+
+
+	</script>
+</body>
+</html>
