@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="color" onclick="start()">change</button>
+    <script>
+        function hello()
+        {
+            let changeA = Math.random() * 255;
+            let changeB = Math.random() * 255;
+            let changeC = Math.random() * 255;
+            let changeD = Math.random() * 255;
+
+            document.body.style.backgroundColor = "rgba(" + changeA + "," + changeB + "," + changeC + "," + changeD + ")"
+        }
+
+        function start()
+        {
+            setInterval(hello,100)
+        }
+    </script>
+</body>
+</html>

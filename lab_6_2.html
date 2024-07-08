@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cdc">change differnt color : </div>
+    <button onclick="change()">click here</button>
+
+    <p id="ddclick" >double click to change color</p>
+    <button ondblclick="MyFunction()">dd click</button>
+
+    <p id="mouseover" onmouseover="over()" onmouseleave="leave()">bring here curser</p>
+
+    <p onmousemove="move()">bring here curser and count++ </p>
+    <p  id="counter">0</p>
+
+    <button id="up_down" onmouseup="up()" onmousedown="down()">click to up/down</button>
+
+    <!-- keybord function -->
+    <br>
+    <p>Key up down title box</p>
+    <br>
+
+    <input id="keybord" onkeydown="downn()" onkeyup="upp()">
+    <br>
+    <p>Key press title box</p>
+    <br>
+    <input id="ps" onkeypress="prees()">
+
+    <script>
+        let up = ()=>
+        {
+            document.getElementById("up_down").style.color = "black";
+        }
+        let down = ()=>
+        {
+            document.getElementById("up_down").style.color = "coral";
+        }
+
+
+
+        let count = 0;
+        let move = ()=>{
+            document.getElementById("counter").innerHTML = count;
+            count++;
+        }
+        
+        let leave = ()=>
+        {
+            document.getElementById("mouseover").style.color = "black";
+        }
+        let over = ()=>
+        {
+            document.getElementById("mouseover").style.color = "cyan";
+        }
+        function change()
+        {
+            document.getElementById("cdc").style.color = "green"
+        }
+        
+        let MyFunction = ()=>{
+            document.getElementById("ddclick").style.color = "red"
+        }
+
+        <!-- keybord function -->
+
+        let upp = () =>
+        {
+            document.getElementById("keybord").style.color = "red"
+        }
+        let downn = ()=>
+        {
+            document.getElementById("keybord").style.color = "black"
+        }
+
+        let prees = ()=>
+        {
+           if(event.key == "a" || event.key == "e" || event.key == "i" || event.key == "o" || event.key == "u")
+           {
+            alert("value is vowel : " + event.key)
+           }
+           else
+           {
+            alert("value is const : " + event.key)
+           }
+        }
+
+    </script>    
+</body>
+</html>

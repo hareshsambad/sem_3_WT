@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "change">submit</button>
+
+    <button onclick="blur()">onhover</button>
+     <p id="s2" onmouseenter="enter()" onmouseleave="leave()" onblur="blur()">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+
+
+    <button onclick="changeColor()">Change Font</button>
+    <p id="s1">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+
+
+    <script>
+
+
+         let colors = ["red" , "yellow" , "coral" , "green" ,"cyan"];
+         let index = 0;
+         document.getElementById('change').addEventListener('click',()=>{
+            document.body.style.backgroundColor = colors[index];
+            index = (index+1) % colors.length;})
+
+            
+
+
+    let changeColor = ()=>{
+        
+        document.getElementById('s1').style.color = "green";
+    }
+
+    let enter = ()=>{
+        
+        document.getElementById('s2').style.color = "cyan";
+    }
+    let leave = ()=>{
+        
+        document.getElementById('s2').style.color = "black";
+    }
+
+    let blur = ()=>{
+        
+        document.getElementById('s2') = "";
+    }
+
+        
+    </script>
+</body>
+</html>
