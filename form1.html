@@ -1,0 +1,115 @@
+
+<html> 
+<head> 
+ <title>Form Fill Test Page</title> 
+</head> 
+<body>
+<style type="text/css">
+    
+
+
+
+
+</style> 
+
+    <form> 
+        <table align="center" border="0" cellpadding="4" cellspacing="4"> 
+        
+          <caption><h1>Student Registration</h1> </caption> 
+ 
+            <tr align="left"> 
+              <td>Name:</td> 
+              <td><input type="text" name="username" id="username" required></td> 
+            </tr> 
+ 
+            <tr align="left"> 
+              <td>Enrollment:</td> 
+              <td><input type="number" pattern="[0-9]{10}" name="number" id="enrollment" required>
+              </td> 
+            </tr>
+
+            <tr>
+                <td>Email ID:</td>
+                <td><input type="text" title="Email like asdf@asdf.com" id="email" required></td>
+            </tr>
+ 
+            <tr align="left"> 
+              <td>Address:</td> 
+              <td><input type="text" name="city" id="address" required></td> 
+            </tr> 
+ 
+            <tr align="left"> 
+                <td>Password:</td>
+                <td><input type="text" name="city" id="password" required></td>  
+            </tr>
+
+            <tr align="left"> 
+              <td>Confirm Password:</td> 
+              <td><input type="text" name="city" id="confirm_password" required></td> 
+             
+            </tr> 
+ 
+            <tr align="left"> 
+              <td>Birth Date:</td> 
+              <td><input type="date" name="date" id="birth_date" required></td> 
+            </tr>
+            <tr>
+            	<td><button onclick="showData()">Submit</button></td>
+            </tr>
+              <tr>
+                <td><button onclick="showData()">reset</button></td>
+            </tr>
+ 
+		</table> 
+    </form> 
+    <script type="text/javascript">
+    	function showData() {
+    		let username = document.getElementById('username').value;
+    		let enrollment = document.getElementById('enrollment').value;
+    		let email = document.getElementById('email').value;
+    		let password = document.getElementById('password').value;
+    		let confirm_password = document.getElementById('confirm_password').value;
+    		let birth_date = document.getElementById('birth_date').value;
+
+    		if (username.length < 2)
+    		{
+    			alert("username must be grater than 2")
+    		}
+
+    		if (enrollment.length = 11)
+    		{
+    			alert("enrollment must grater than 11")
+    		}
+
+
+    		if (password != confirm_password) {
+    			alert("Password And confirm_password are not same : ")
+    		}
+
+    		let patternA = /([!@#$%^&]+[0-9]+[a-z A-Z]*){8,12}/;
+    		let newPattern  =  new RegExp(patternA);
+
+    		if(!newPattern.test('password') ){
+                alert("Password not");
+    		}
+
+            bd=new Date(birth_date)
+    		today=new Date()
+            age=today.getFullYear()-bd.getFullYear()
+            if(age<18){
+                
+                alert("Inavlid age")
+            }
+            let emaila = /^([a-z A-Z0-9]+[@]{1,1}[a-z]+[.]{1,1}[a-z A-Z]{2,3})/;
+               let newPattern1  =  new RegExp(emaila);
+               if(newPattern1.test('email') ){
+                
+                alert("Email invalid ");
+            }
+    	}
+
+    </script>
+    
+   
+</body> 
+</html>
