@@ -1,0 +1,120 @@
+
+<html> 
+<head> 
+ <title>Form Fill Test Page</title> 
+</head> 
+<body> 
+    <form> 
+        <table align="center" border="0" cellpadding="4" cellspacing="4"> 
+        
+          <caption><h1>Student Registration</h1> </caption> 
+ 
+            <tr align="left"> 
+              <td>Name:</td> 
+              <td><input type="text" name="username" id="username" required></td> 
+            </tr> 
+ 
+            <tr align="left"> 
+              <td>Enrollment:</td> 
+              <td><input type="number" pattern="[0-9]{10}" name="number" id="enrollment" required>
+              </td> 
+            </tr>
+
+            <tr>
+                <td>Email ID:</td>
+                <td><input type="email" title="Email like asdf@asdf.com" id="email" required></td>
+            </tr>
+ 
+            <tr align="left"> 
+              <td>Address:</td> 
+              <td><input type="text" name="city" id="address" required></td> 
+            </tr> 
+ 
+            <tr align="left"> 
+                <td>Password:</td>
+                <td><input type="text" name="city" id="password" required></td>  
+            </tr>
+
+            <tr align="left"> 
+              <td>Confirm Password:</td> 
+              <td><input type="text" name="city" id="confirm_password" required></td> 
+             
+            </tr> 
+ 
+            <tr align="left"> 
+              <td>Birth Date:</td> 
+              <td><input type="date" name="date" id="birth_date" required></td> 
+            </tr>
+            <tr>
+            	<td><button onclick="showData()">Submit</button></td>
+            </tr>
+              <tr>
+                <td><button onclick="showData()">reset</button></td>
+            </tr>
+ 
+		</table> 
+    </form> 
+    <script type="text/javascript">
+    	function showData()
+        {
+
+    		let username = document.getElementById('username').value;
+    		let enrollment = document.getElementById('enrollment').value;
+    		let email = document.getElementById('email').value;
+    		let password = document.getElementById('password').value;
+    		let confirm_password = document.getElementById('confirm_password').value;
+    		let date = document.getElementById('birth_date').value;
+
+
+
+
+    		if (username.length < 2)
+    		{
+    			alert("username must be grater than 2")
+    		}
+
+
+    		if (enrollment.length < 11)
+    		{
+    			alert("enrollment must grater than 11")
+    		}
+
+
+    		if (password != confirm_password) {
+    			alert("Password And confirm_password are not same : ")
+    		}
+            console.log("age")
+
+
+    		// let patternA = /^[A-Za-z0-9][]\.{3}$/;
+    		// let newPattern  =  new RegExp(patternA);
+
+    		// if(newPattern.test('password') == patternA)
+      //       {
+      //           alert("NO");
+    		// }
+
+            birth_date = new Date(date);
+            today = new Date();
+            age = today.getFullYear() - birth_date.getFullYear();
+            dd = today.getDate() - birth_date.getDate();
+            dm = birth_date.getMonth() - today.getMonth();
+             console.log(age)
+
+
+            if(dm<0||(dm=0 && dd<0))
+            {
+                console.log(age)
+                age--
+    		}
+
+            if (age < 18)
+            {
+                alert("You are child : ")
+            }
+           
+    }   
+
+    </script>
+</body> 
+</html>
