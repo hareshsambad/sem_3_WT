@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES8 Demo</title>
+    <style>
+        #add{
+            display: block;
+        }
+        #save{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="name">
+    <button onclick="ins()" id="add">Add </button>
+    <button onclick="save()" id="save">Save</button>
+    <div id="data"></div>
+    <script>
+        a=[]
+        function ins(){
+            n=document.getElementById('name')
+            a.push(n.value)
+            disp()
+            n.value=""
+        }
+        function disp(){
+            document.getElementById('data').innerHTML=""
+            for(i=0;i<a.length;i++){
+                document.getElementById('data').innerHTML+=a[i]+
+                            "<button onclick=\"dlt("+i+")\">Delete</button>"+
+                            "<button onclick=\"edit("+i+")\">Edit</button>"
+                            +"<br>"
+            }
+        }
+        function edit(i){
+            index=i
+            n1=document.getElementById('name')
+            n1.value=a[i]
+            document.getElementById('add').style.display="none"
+            document.getElementById('save').style.display="block"
+
+
+        }
+        function dlt(i){
+            a.splice(i,1)
+            disp()
+        }
+        function save(){
+            newname=document.getElementById('name')
+            a[index]=newname.value
+            disp()
+            newname.value=""
+            document.getElementById('add').style.display="block"
+            document.getElementById('save').style.display="none"
+        }
+        // function MyFunctionA(callback){
+        //     console.log("Inside Function A");
+        //     callback();
+        // }
+
+        // function MyFunctionb(){
+        //     console.log("Inside Function B");
+        // }
+
+        // MyFunctionA(MyFunctionb);
+
+        // let arrayA = [1,2,3,4];
+        // let arrayB = [...arrayA,5,6,7,8];
+        // arrayC = [...arrayA,...arrayB];
+        // console.log(arrayB);
+        // console.log(arrayC);
+
+        // let newArrayA = [1,2,3,4,5];
+        // let [a,b,c,d] = newArrayA; 
+
+        // console.log(c);
+        
+    </script>
+</body>
+</html>
